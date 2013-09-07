@@ -114,16 +114,17 @@ public class PolygonalGameObject extends GameObject {
      */
     @Override
     public void drawSelf(GL2 gl) {
-
+    	
         // TODO: Write this method
     	gl.glMatrixMode(GL2.GL_MODELVIEW);
+    	//gl.glPushMatrix(); <- dont have system transformation,useless
     	//gl.glLoadIdentity();
     	gl.glColor3d(myFillColour[0], myFillColour[1], myFillColour[2]);
     	System.out.println("Fill colour is "+myFillColour[0]+" "+myFillColour[1]+" "+myFillColour[2]);
     	gl.glBegin(GL2.GL_POLYGON);
     	for(int i = 0; i<myPoints.length; i+=2){
     		gl.glVertex2d(myPoints[i],myPoints[i+1]);
-    		System.out.println("Point is "+myPoints[i]+" "+myPoints[i+1]);
+    		//System.out.println("Point is "+myPoints[i]+" "+myPoints[i+1]);
     	}
     	gl.glEnd();
     	
@@ -133,6 +134,7 @@ public class PolygonalGameObject extends GameObject {
     		gl.glVertex2d(myPoints[i],myPoints[i+1]);
     	}
     	gl.glEnd();
+    	//gl.glPopMatrix(); 
     }
 
 
