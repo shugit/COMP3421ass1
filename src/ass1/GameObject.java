@@ -420,5 +420,7 @@ public class GameObject {
     			+" "+this.getPosition()[1]+" "+this.getRotation()+" "+this.getScale());
     }
     
-
+    public boolean containsPoint(double[] p) {
+		return false;
+	}
 }
